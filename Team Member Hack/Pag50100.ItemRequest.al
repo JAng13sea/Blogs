@@ -98,7 +98,7 @@ page 50100 "Item Request"
     begin
         Request.Method := 'POST';
         //Request.SetRequestUri('https://ptsv2.com/t/1jqii-1639481761/post');
-        Request.SetRequestUri('https://prod-28.uksouth.logic.azure.com:443/workflows/7e537bb5254648969566a8b61dedffcf/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=SAkN8Rj6Zp6KCrS8Kpmw0D3LvLo6G1Skmt06i4Y-AaE');
+        Request.SetRequestUri('your flow URL');
         Jobject.Add('ItemDescription', ItemDescription);
         Jobject.Add('ItemUoM', ItemUoM);
         Jobject.Add('ItemCategory', ItemCategory);
