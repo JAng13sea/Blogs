@@ -17,30 +17,18 @@ page 50100 "Item Request"
                 {
                     ApplicationArea = All;
                     Caption = 'Item Description';
-                    trigger OnValidate()
-                    begin
-                        //ItemDescription := ItemDescription;
-                    end;
                 }
                 field(ItemUoM; ItemUoM)
                 {
                     ApplicationArea = All;
                     TableRelation = "Unit of Measure".Code;
                     Caption = 'Item Unit of Measure';
-                    trigger OnValidate()
-                    begin
-                        //ItemUoM := ItemUoM;
-                    end;
                 }
                 field(ItemCategory; ItemCategory)
                 {
                     ApplicationArea = All;
                     TableRelation = "Item Category".Code;
                     Caption = 'Item Category Code';
-                    trigger OnValidate()
-                    begin
-                        //ItemCategory := ItemCategory;
-                    end;
                 }
             }
         }
@@ -77,7 +65,7 @@ page 50100 "Item Request"
                 InFooterBar = true;
                 trigger OnAction()
                 begin
-                    if SendHTTPRequest(ItemDescription, ItemUoM) then begin
+                    if SendHTTPRequest(ItemDescription, ItemUoM, ItemCategory) then begin
                         Message('Request Sent');
                         CurrPage.Close();
                     end;
@@ -86,7 +74,7 @@ page 50100 "Item Request"
         }
     }
 
-    local procedure SendHTTPRequest(pItemDescription: Text; pItemUoM: Code[20]): Boolean
+    local procedure SendHTTPRequest(pItemDescription: Text; pItemUoM: Code[20]; pItemCategory: Code[20]): Boolean
     var
         Client: HttpClient;
         Request: HttpRequestMessage;
@@ -99,9 +87,9 @@ page 50100 "Item Request"
         Request.Method := 'POST';
         //Request.SetRequestUri('https://ptsv2.com/t/1jqii-1639481761/post');
         Request.SetRequestUri('your flow URL');
-        Jobject.Add('ItemDescription', ItemDescription);
-        Jobject.Add('ItemUoM', ItemUoM);
-        Jobject.Add('ItemCategory', ItemCategory);
+        Jobject.Add('ItemDescription', pItemDescription);
+        Jobject.Add('ItemUoM', pItemUoM);
+        Jobject.Add('ItemCategory', pItemCategory);
         Jobject.WriteTo(tmpString);
         Content.WriteFrom(tmpString);
         Content.ReadAs(tmpString);
