@@ -1,0 +1,260 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "PP Customer Connectors",
+    "description": "PP Customer Connectors"
+  },
+  "host": "api.businesscentral.dynamics.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/companies(1cd5e4e1-de93-40ce-825b-4a3444a4e65a)/journals(b85d8b50-13e6-ea11-8b7b-002248009200)/journalLines(1e54dbf5-13e6-ea11-8b7b-002248009200)/dimensionSetLines": {},
+    "/api/v2.0/companies(%7B%7BcompanyId%7D%7D)/dimensions": {},
+    "/api/v2.0/companies(%7B%7BcompanyId%7D%7D)/dimensions(%7B%7BItemgroup%7D%7D)/dimensionValues": {},
+    "/{tenantId}/production/companies({companyId})/journals({journalId})/journalLines({journalLineId})/dimensionSetLines": {},
+    "/v2.0/{tenantId}/{environment}/api/v2.0/companies({companyId})/journals({journalId})/journalLines({journalLineId})/dimensionSetLines": {
+      "patch": {
+        "summary": "PatchdimensionSetLines",
+        "description": "PatchdimensionSetLines",
+        "operationId": "PatchDimensionsetlines",
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "journalId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "journalLineId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "description": "code"
+                },
+                "parentId": {
+                  "type": "string",
+                  "description": "parentId"
+                },
+                "valueCode": {
+                  "type": "string",
+                  "description": "valueCode"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "@odata.etag": {
+                  "type": "string",
+                  "description": "@odata.etag"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "code"
+                },
+                "parentId": {
+                  "type": "string",
+                  "description": "parentId"
+                },
+                "parentType": {
+                  "type": "string",
+                  "description": "parentType"
+                },
+                "displayName": {
+                  "type": "string",
+                  "description": "displayName"
+                },
+                "valueId": {
+                  "type": "string",
+                  "description": "valueId"
+                },
+                "valueCode": {
+                  "type": "string",
+                  "description": "valueCode"
+                },
+                "valueDisplayName": {
+                  "type": "string",
+                  "description": "valueDisplayName"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "@odata.etag": {
+                  "type": "string",
+                  "description": "@odata.etag"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "code"
+                },
+                "parentId": {
+                  "type": "string",
+                  "description": "parentId"
+                },
+                "parentType": {
+                  "type": "string",
+                  "description": "parentType"
+                },
+                "displayName": {
+                  "type": "string",
+                  "description": "displayName"
+                },
+                "valueId": {
+                  "type": "string",
+                  "description": "valueId"
+                },
+                "valueCode": {
+                  "type": "string",
+                  "description": "valueCode"
+                },
+                "valueDisplayName": {
+                  "type": "string",
+                  "description": "valueDisplayName"
+                }
+              }
+            }
+          }
+        },
+        "summary": "PostDimensionSetLines",
+        "operationId": "PostDimensionSetLines",
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "journalId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "journalLineId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "description": "code"
+                },
+                "parentId": {
+                  "type": "string",
+                  "description": "parentId"
+                },
+                "valueCode": {
+                  "type": "string",
+                  "description": "valueCode"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2-auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2-auth": []
+    }
+  ],
+  "tags": []
+}
