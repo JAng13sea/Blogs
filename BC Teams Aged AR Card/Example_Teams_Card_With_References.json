@@ -1,0 +1,154 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.4",
+    "__comment": "Elements used",
+    "body": [
+        {
+            "type": "Container"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Aged Debtors Report",
+            "wrap": true,
+            "horizontalAlignment": "Center",
+            "size": "ExtraLarge",
+            "fontType": "Default",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "As of @{formatDateTime(utcNow(), 'D')}",
+            "wrap": true,
+            "horizontalAlignment": "Center",
+            "size": "Medium",
+            "fontType": "Default"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Image",
+                    "url": "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/payslip/assets/img_spacer.png"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "By Ageing Band",
+                    "wrap": true,
+                    "weight": "Bolder",
+                    "color": "Accent",
+                    "size": "Large"
+                }
+            ],
+            "spacing": "ExtraLarge"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "wrap": true,
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "\n\n0 Days\n\n30 Days\n\n60 Days\n\n61+ Days",
+                                    "wrap": true,
+                                    "spacing": "Small",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "Container"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "\n\n£@{string(formatNumber(body('agedAccountsReceivables')['value']?[0]?['currentAmount'],'N'))}\n\n£@{string(formatNumber(body('agedAccountsReceivables')?['value']?[0]?['period1Amount'],'N'))}\n\n£@{string(formatNumber(body('agedAccountsReceivables')?['value']?[0]?['period2Amount'],'N'))}\n\n£@{string(formatNumber(body('agedAccountsReceivables')?['value']?[0]?['period3Amount'],'N'))}",
+                                    "wrap": true,
+                                    "spacing": "Small",
+                                    "horizontalAlignment": "Right",
+                                    "weight": "Bolder"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "spacing": "Medium"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "\n\nTOTAL OUTSTANDING",
+                            "wrap": true,
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "Accent",
+                            "spacing": "ExtraLarge"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "\n\n£@{string(formatNumber(body('agedAccountsReceivables')?['value']?[0]?['balanceDue'],'N'))}",
+                            "wrap": true,
+                            "weight": "Bolder",
+                            "size": "Medium",
+                            "color": "Accent",
+                            "horizontalAlignment": "Right",
+                            "spacing": "ExtraLarge"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.OpenUrl",
+                                    "title": "👆 Open in System",
+                                    "url": "https://businesscentral.dynamics.com/<tenantID>/Sandbox?report=120"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "spacing": "ExtraLarge",
+            "separator": true
+        }
+    ],
+    "backgroundImage": {
+        "horizontalAlignment": "Center"
+    }
+}
